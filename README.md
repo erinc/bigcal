@@ -1,5 +1,5 @@
 # bigcal
-
+![Calendar screenshot](screenshot.png)
 Generates a single-page HTML year view of your macOS Calendar all-day events.
 
 ## Usage
