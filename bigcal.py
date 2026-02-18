@@ -24,7 +24,7 @@ SCRIPT_DIR = Path(__file__).parent
 OUTPUT_PATH = SCRIPT_DIR / "cal.html"
 
 EKEntityTypeEvent = 0
-COLS = 20  # days per row
+COLS = 22  # days per row
 
 
 # ---------------------------------------------------------------------------
@@ -161,7 +161,7 @@ def fetch_events(store: EventKit.EKEventStore, year: int, filter_cals: list[str]
 
 
 # ---------------------------------------------------------------------------
-# Grid construction — 16 days per row, continuous from Jan 1
+# Grid construction — Continuous from Jan 1
 # ---------------------------------------------------------------------------
 
 def build_rows(year: int) -> list[list[date | None]]:
@@ -403,6 +403,8 @@ def generate_html(
   <title>bigcal {year}</title>
   <style>
     *, *::before, *::after {{ box-sizing: border-box; margin: 0; padding: 0; }}
+    ::-webkit-scrollbar {{ display: none; }}
+    html {{ -ms-overflow-style: none; scrollbar-width: none; }}
     body {{
       background: #fff;
       color: #111;
